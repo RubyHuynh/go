@@ -10,10 +10,10 @@ func main() {
 	log.SetPrefix("greetings: ")
 	log.SetFlags(0)
 
-	message, err := greetings.Hello("")
-	if (err!= nil) {
+	//greetings.Init()
+	message, err := greetings.Hello("CatCat")
+	if err != nil {
 		log.Fatal(err)
 	}
-	message,err = greetings.Hello("Ruby H")
 	fmt.Println(message)
 }
