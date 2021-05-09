@@ -16,4 +16,8 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Println(message)
+
+	pool := []string {"AA", "BB", "CC"}
+	messages, err := greetings.Hellos(pool)
+	fmt.Println(messages)
 }
