@@ -3,7 +3,10 @@
 
 
 ##### 18/05/2021
-ref/pointers, strings, format, struct, receiver, maps, range (wordcount), func as var, func closure (fibonacci)
+- ref/pointers, strings, format, struct, receiver, maps, range (wordcount), func as var, func closure (fibonacci)
+- method: You can only declare a method with a receiver whose type is defined in the same package as the method. You cannot declare a method with a receiver whose type is defined in another package
+- value/ipointer intepret: convenient? no, too much implicit works behind the scene. not good for dev at all. Still prefer C
+- all methods on a given type should have either value or pointer receivers, but not a mixture of both.
 
 ##### 14/05/2021
 defer, panic, restore
