@@ -2,6 +2,11 @@
 ##May2021-Dec2021
 
 
+##### 19/05/2021
+- interface, interface implements, <values-types(concrete type)>, nil receiver vs nil interface values, empty interface
+- type assertion to get back concrete type: i.(T)
+- type switches i.(type) <<<<< ok
+- 
 ##### 18/05/2021
 - ref/pointers, strings, format, struct, receiver, maps, range (wordcount), func as var, func closure (fibonacci)
 - method: You can only declare a method with a receiver whose type is defined in the same package as the method. You cannot declare a method with a receiver whose type is defined in another package
