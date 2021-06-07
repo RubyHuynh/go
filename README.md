@@ -1,5 +1,8 @@
 # GO for FUN
-##May2021-Dec2021
+##May2021
+
+##### 07/06/2021
+Bye Go!
 
 ##### 06/06/2021
 REST CRUD

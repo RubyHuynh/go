@@ -1,4 +1,4 @@
-
+//go get github.com/gorilla/mux
 // main.go
 package main
 
@@ -15,7 +15,7 @@ import (
 // Article - Our struct for all articles
 type Article struct {
     Id      string    `json:"Id"`
-    Title   string `json:"Title"`
+    Title   string `json:"TTTitle"`
     Desc    string `json:"desc"`
     Content string `json:"content"`
 }
