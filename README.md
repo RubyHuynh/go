@@ -1,6 +1,8 @@
 # GO for FUN
 ##May2021-Dec2021
 
+##### 06/06/2021
+REST CRUD
 
 ##### 19/05/2021
 - interface, interface implements, <values-types(concrete type)>, nil receiver vs nil interface values, empty interface
