@@ -1,5 +1,10 @@
 # GO for FUN
-##May2021
+##May2021 -> ?
+
+##### 08/06/2021 -> 
+build a site, tracking prices
+	1- base app: query tiki & unmarshal json to get url + price
+	-
 
 ##### 07/06/2021
 Bye Go!
