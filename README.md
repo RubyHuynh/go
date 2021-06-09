@@ -3,7 +3,7 @@
 
 ##### 08/06/2021 -> 
 build a site, tracking prices  
-	1-08/06/2021- new prj: query tiki & unmarshal json to get url + price
+	1-08/06/2021- new prj: query tiki & unmarshal json to get url + price  
 	2-09/06/2021- logger instance + correct unit test
 
 ##### 07/06/2021
