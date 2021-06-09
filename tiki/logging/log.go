@@ -1,57 +1,39 @@
 package log
 
 import (
-    "log"
-    "os"
-
+	"log"
+	"os"
+	"sync"
 )
 
+type logger struct {
+	filename string
+	*log.Logger
+}
 
-func init() {
-    f, err := os.OpenFile("./full.log", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+var _log *logger
+var _once sync.Once
 
-    if err != nil {
-        log.Fatalf("error opening file: %v", err)
-    }
-    defer f.Close()
-    log.SetOutput(f)
+// start loggeando
+func GetInstance() *logger {
+	_once.Do(func() {
+		path,err := os.Getwd()
+		if err != nil {
+			path = "./"
+		}
+		_log = createLogger(path + "/full.log")
+	})
+	return _log
+}
 
+func createLogger(fname string) *logger {
+	file, _ := os.OpenFile(fname, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0777)
+
+	return &logger{
+		filename: fname,
+		Logger:   log.New(file, "hthngoc ", log.Ldate | log.Ltime),
+	}
 }
 
 
-// InPrint`ifo ...
-func Printf(format string, v ...interface{}) {
-    log.Printf(format, v...)
-}
 
-func Println(format string, v ...interface{}) {
-
-    log.Printf(format, v...)
-}
-
-/*
-// Warn ...
-func Warn(format string, v ...interface{}) {
-    log.Warnf(format, v...)
-}
-
-// Error ...
-func Error(format string, v ...interface{}) {
-    log.Errorf(format, v...)
-}
-
-var (
-
-    // ConfigError ...
-    ConfigError = "%v type=config.error"
-
-    // HTTPError ...
-    HTTPError = "%v type=http.error"
-
-    // HTTPWarn ...
-    HTTPWarn = "%v type=http.warn"
-
-    // HTTPInfo ...
-    HTTPInfo = "%v type=http.info"
-  )
-  */

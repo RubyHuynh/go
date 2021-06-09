@@ -8,6 +8,8 @@ import (
 	"fmt"
 )
 
+func init() {
+}
 type extractedData struct {
 	Url string `json:"url_key"`
 	Price int `json:"price"`
@@ -21,13 +23,14 @@ func Access() string {
 }
 
 func Get(sku int) extractedData {
+	_log := log.GetInstance()
 	resp, err := http.Get("https://tiki.vn/api/v2/products/2076813")
 	if err != nil {
-		log.Printf("%v\n", err)
+		_log.Println(err)
 	}
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		log.Printf("%v\n", err)
+		_log.Printf("%v\n", err)
 		//log.Fatalln(err)
 	}
 	data := extractedData{}
@@ -41,5 +44,6 @@ func Get(sku int) extractedData {
 	fmt.Printf("%v", sb)
 	*/
 	fmt.Println(data)
+	_log.Printf("xxx %v\n", data)
 	return data
 }

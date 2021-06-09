@@ -17,7 +17,7 @@ func init() {
 	log.Println("Starting service...")*/
 }
 func main() {
-	log.Println(" checking tiki api connection...")
-	log.Println(tiki.Access())
-	log.Printf(" rs=%v\n", tiki.Get(123))
+	logger := log.GetInstance()
+	logger.Println("Starting.....")
+	tiki.Get(123)
 }
